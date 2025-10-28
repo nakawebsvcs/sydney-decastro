@@ -106,10 +106,10 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             <!-- <span class="cs-topper">About Us</span> -->
             <h2 class="cs-title">My Comittment</h2>
             <p class="cs-text">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus sunt nemo accusamus atque id tempore facere facilis perferendis? Necessitatibus pariatur eligendi corporis cupiditate ipsa consequatur et nam quod fugiat blanditiis. Lorem ipsum dolor sit amet, consectetur adipisicing.
-            </p>
-            <p class="cs-text">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus sunt nemo accusamus atque id tempore facere facilis perferendis? Necessitatibus pariatur eligendi corporis cupiditate ipsa consequatur et nam quod fugiat blanditiis.
+                Under my care, each client can expect an individualized experience, starting with a thorough health intake process. This helps me to better understand your pain as well as any goals you may have in mind during your health journey. It also helps me to provide the safest, most effective treatment that is best suited to your needs.</p>
+            <p class="cs-text">During massage sessions, I want my clients to feel comfortable and in total control of (another way to say "what happens to their bodies" without sounding weird asf). Feedback lets me know what is and isn't working for you, so you can rest assured that you can always feel confident voicing your concerns with me.</p>
+            <p class="cs-text">If there is ever a need for specialized treatment that I do not currently offer, I will do my part to refer you to someone better qualified in addressing your needs.</p>
+            <p class="cs-text">This is a team effort, and it's important to me that you feel empowered to make your own health decisions on what kind of care you receive.
             </p>
            <!--  <div class="cs-contact-group">
                 <a class="cs-link" href="tel:555-555-0234">
@@ -146,16 +146,19 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
     <div class="cs-container">
         <!-- Left Image Section -->
         <picture class="cs-picture">
-            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/mountains.jpg">
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/mountains.jpg">
-            <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/mountains.jpg" alt="Mountains" width="522" height="522" aria-hidden="true">
+            <source media="(max-width: 600px)" srcset="/assets/images/lavendar-oil.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/lavendar-oil.jpg">
+            <img loading="lazy" decoding="async" src="/assets/images/lavendar-oil.jpg" alt="Massage Modalities" width="522" height="522" aria-hidden="true">
         </picture>
         <!-- Right Content Section-->
         <div class="cs-content">
             <!-- <span class="cs-topper">What’s Next?</span> -->
-            <h2 class="cs-title">Another Section</h2>
+            <h2 class="cs-title">Massage Modalities</h2>
             <p class="cs-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc lobortis mattis aliquam faucibus purus in. Diam ut venenatis tellus in metus vulputate eu. Massa vitae tortor condimentum lacinia quis vel eros donec ac.
+                <strong>Swedish:</strong> In this type of massage, we will focus on restoring a sense of calm and overall balance. Relaxation is found through application of long, gliding massage strokes in a rhythmic and flowing sequence. This is a popular choice if your goal is to unwind and de-stress.
+            </p>
+             <p class="cs-text">
+                <strong>Deep tissue/Neuromusclar Therapy (NMT):</strong> This style of massage takes more time, and generally targets just a few areas of discomfort in order to provide relief to specific muscles. Techniques such as trigger point therapy may be applied as needed in order to reduce muscle tension and increase range of motion. This modality involves deeper pressure and a lot more communication between client and therapist regarding pain tolerance and comfort level.
             </p>
             <!-- <a class="cs-button-solid" aria-label="learn more about our programs" href="">Learn More</a> -->
         </div>
@@ -573,7 +576,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
         .cs-text {
             /* 16px - 20px */
-            font-size: clamp(1.5rem, 2vw, 1.25rem);
+            font-size: clamp(1.3rem, 2vw, 1.5rem);
             margin: 0 0 (32/16rem) 0;
         }
 
@@ -658,7 +661,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         }
 
         .cs-text {
-            font-size: clamp(1.5rem, 2vw, 1.5rem);
+            font-size: clamp(1.3rem, 1.5vw, 1.3rem);
             margin-bottom: (16/16rem);
             &:last-of-type {
                 margin-bottom: (32/16rem);
@@ -939,10 +942,11 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             position: relative;
             /* prevents padding from adding to height and width */
             box-sizing: border-box;
+            border-radius: 0.8rem;
 
-            &:before {
+        /*     &:before { */
                 /* Bottom Line */
-                content: "";
+           /*      content: "";
                 width: 100%;
                 height: 1px;
                 background: rgb(180, 178, 199);
@@ -959,9 +963,9 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 left: 0;
             }
 
-            &:after {
+            &:after { */
                 /* Right Line */
-                content: "";
+            /*     content: "";
                 width: 1px;
                 height: 100%;
                 background: rgb(180, 178, 199);
@@ -976,8 +980,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 display: block;
                 bottom: 0;
                 left: 0;
-            }
-        }
+            } */
+        } 
 
         .cs-content {
             /* set text align to left if content needs to be left aligned */
@@ -993,7 +997,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
         .cs-text {
             /* 16px - 20px */
-            font-size: clamp(1.5rem, 2vw, 1.5rem) !important;
+            font-size: clamp(1.4rem, 2vw, 1.4rem);
             margin-bottom: (16/16rem);
             &:last-of-type {
                 margin-bottom: (32/16rem);
@@ -1044,13 +1048,14 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             width: 100%;
             max-width: (522/16rem);
             margin: 0;
-            border: 1px solid var(--primary);
+            /* border: 1px solid var(--primary); */
             position: relative;
             display: block;
             /* width divided by height */
             aspect-ratio: 1/1;
             /* prevents border from adding to height and width */
             box-sizing: border-box;
+            border-radius: 0.8rem;
 
             img {
                 position: absolute;
@@ -1059,6 +1064,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
+                object-position: center 80%;
+                border-radius: 0.8rem;
             }
         }
     }
