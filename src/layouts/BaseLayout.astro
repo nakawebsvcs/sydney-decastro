@@ -50,8 +50,8 @@ const { description, title, preloadedImage } = Astro.props as Props;
             <meta property="og:url" content={`https://${client.domain}${Astro.url.pathname}`} />
             {
               preloadedImage && 
-                <meta property="og:image" content={preloadedImage.src} /> 
-                <meta property="og:image:secure_url" content={preloadedImage.src} />
+                <meta property="og:image" content="/assets/images/syd-1.jpg" /> 
+                <meta property="og:image:secure_url" content="/assets/images/syd-1.jpg" />
             }
 
             <!-- Google Fonts -->
