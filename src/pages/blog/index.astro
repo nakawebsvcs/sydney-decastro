@@ -4,7 +4,6 @@
 **/
 
 import BaseLayout from "@layouts/BaseLayout.astro";
-import CTA from "@components/CTA.astro";
 import { getCollection } from "astro:content";
 import { getImage } from "astro:assets";
 import "@styles/sidebar.less";
@@ -31,7 +30,6 @@ const optimizedImage = await getImage({ src: landingImage, format: "avif" });
 
 	<!-- Use the BlogRecentArticlesWithSidebar layout to display the recent articles in a custom sidebar layout-->
 	<BlogRecentArticlesWithSidebar posts={posts} />
-	<CTA />
 
 </BaseLayout>
 
