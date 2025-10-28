@@ -1,0 +1,15 @@
+{
+	"name": "Sydney deCastro LMT",
+	"email": "help@codestitch.app",
+	"phoneForTel": "570-217-1680",
+	"phoneFormatted": "(570) 217-1680",
+	"address": {
+		"lineOne": "First Address Line",
+		"lineTwo": "Second Address Line",
+		"city": "Lewiburg",
+		"state": "Pennsylvania",
+		"zip": "17837",
+		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
+	},
+	"domain": "http://sydneydecastrolmt.netlify.app"
+}
