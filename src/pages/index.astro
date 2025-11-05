@@ -26,7 +26,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             <p class="cs-text">
                 My name is Sydney deCastro. I'm a licensed massage therapist in Pennsylvania and I'm excited to share my passion for bodywork and healing through therapeutic touch.
             </p>
-            <a href="" class="cs-button-solid">Contact</a>
+            <a href="/contact" class="cs-button-solid">Contact</a>
             <div class="cs-info">
                 <img class="cs-info-pic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/derma-sbs-1.png" alt="graphic" width="179" height="225" aria-hidden="true">
                 <div class="cs-wrapper">
@@ -166,8 +166,13 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 </section>
                                 
  <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function initPageAnimations() {
         const sections = document.querySelectorAll('.fade-in');
+
+        // If there are no elements to animate, do nothing.
+        if (sections.length === 0) {
+            return;
+        }
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -188,8 +193,15 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         sections.forEach((section) => {
             observer.observe(section);
         });
-    });
+    }
+
+    // Run animations on initial page load
+    initPageAnimations();
+
+    // Run animations after every page transition
+    document.addEventListener('astro:after-swap', initPageAnimations);
 </script>                               
+
 
 </BaseLayout>
 

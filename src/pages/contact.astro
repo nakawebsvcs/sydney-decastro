@@ -11,17 +11,17 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
 <BaseLayout
   title="Contact"
-  description="Meta description for the page"
+  description="Get in touch with Sydney deCastro, LMT"
   preloadedImage = {optimizedImage}
 >
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
+  <!-- <Landing 
     title="Contact"
     image={optimizedImage}
-  />
+  /> -->
 
   <!-- ============================================ -->
   <!--                Contact Form                  -->
@@ -29,16 +29,29 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
   <section id="cs-contact">
     <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post">
+      <form name="contact"
+      id="cs-form"
+      method="post"
+      netlify="true"
+      netlify-honeypot="web-url"
+      action="/success"
+      >
         <div class="cs-content">
           <span class="cs-topper">Contact</span>
           <h2 class="cs-title">Get in Touch</h2>
           <p class="cs-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
-            elementum ullamcorper ipsum porttitor aliquam. Id magna urna
-            ultrices odio pulvinar. Sed ut.
+            Send me a message and I'll get back to you as soon as I can!
           </p>
         </div>
+        <!-- Hidden field for Netlify -->
+        <input type="hidden" name="form-name" value="contact" />
+        
+        <!-- Honeypot field to prevent spam -->
+        <p class="hidden">
+          <label>
+            Don't fill this out if you're human: <input name="web-url" />
+          </label>
+        </p>
         <label>
           Name
           <input
@@ -69,15 +82,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             placeholder="Phone"
           />
         </label>
-        <label>
-          How Did You Find Us
-          <input
-            type="text"
-            id="find"
-            name="find-us"
-            placeholder="How did you find us?"
-          />
-        </label>
         <label class="cs-label-message">
           Message
           <textarea
@@ -86,26 +90,27 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             id="message"
             placeholder="Write message..."></textarea>
         </label>
-        <button class="cs-button-solid" type="submit">Submit Message</button>
+        <div data-netlify-recaptcha="true"></div>
+<button class="cs-button-solid" type="submit">Submit Message</button>
       </form>
       <div class="cs-right-section">
         <!--Email-->
         <span class="cs-header">Email</span>
         <a class="cs-link" href={`mailto:${client.email}`}>{client.email}</a>
         <!--Phone-->
-        <span class="cs-header">Phone</span>
+        <!-- <span class="cs-header">Phone</span>
         <a class="cs-link" href={`tel:${client.phoneForTel}`}
           >{client.phoneFormatted}</a
-        >
+        > -->
         <!--Address-->
-        <span class="cs-header">Address</span>
+        <span class="cs-header">Location</span>
         <a class="cs-link" href={client.address.mapLink}>
-          {client.address.lineOne},
+          <!-- {client.address.lineOne},
           <br />
           {client.address.lineTwo},
-          <br />
+          <br /> -->
           <span class="cs-block">
-            {client.address.city}
+            {client.address.city},
             {client.address.state}
             {client.address.zip}
           </span>
@@ -115,13 +120,13 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         <picture class="cs-bg-picture">
           <source
             media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
+            srcset="/assets/images/lavendar-oil.jpg"
           />
           <img
             aria-hidden="true"
             decoding="async"
-            src="/assets/images/skyscraper.jpg"
-            alt="building"
+            src="/assets/images/lavendar-oil.jpg"
+            alt="massage"
             loading="lazy"
             width="2500"
             height="1667"
@@ -153,8 +158,8 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
     }
 
     #cs-contact {
-      font-family: "Roboto", "Arial", sans-serif;
       padding: var(--sectionPadding);
+      padding-top: 15rem;
 
       .cs-container {
         width: 100%;
@@ -174,11 +179,16 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
       }
 
       .cs-title {
+        color: var(--secondary);
         text-align: left;
         max-width: (800/16rem);
       }
 
       .cs-text {
+        color: var(--secondary);
+        font-size: 1.5rem;
+        line-height: 1.5em;
+        /* 16px - 24px */
         text-align: left;
         /* 404px - 522px */
         max-width: clamp(25.25rem, 30vw, 32.625rem);
@@ -231,6 +241,11 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
           padding-top: (20/16rem);
         }
 
+         .hidden {
+    display: none;
+  }
+  
+
         .cs-button-solid {
           width: 100%;
           border: none;
@@ -250,6 +265,13 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         position: relative;
         /* cuts off corners on img tag */
         overflow: hidden;
+
+        /* Ensure text stays above image */
+        .cs-header,
+        .cs-link {
+          position: relative;
+          z-index: 3;
+        }
       }
 
       .cs-header {
@@ -310,7 +332,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         position: absolute;
         top: 0;
         left: 0;
-        z-index: -1;
+        z-index: 1; /* CHANGED: from -1 to 1 */
         transition: transform 0.6s;
 
         &:before {
@@ -327,7 +349,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
           position: absolute;
           top: 0;
           left: 0;
-          z-index: 1;
+          z-index: 2; /* CHANGED: from 1 to 2 */
         }
 
         img {
@@ -338,6 +360,7 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
           position: absolute;
           top: 0;
           left: 0;
+          z-index: 1; /* ADDED: ensure image is behind gradient */
         }
       }
     }
@@ -420,45 +443,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
 
       .cs-right-section {
         height: (578/16rem);
-      }
-    }
-  }
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #cs-contact {
-        .cs-text,
-        .cs-title {
-          color: var(--bodyTextColorWhite);
-        }
-
-        .cs-topper {
-          color: var(--primaryLight);
-        }
-
-        #cs-form {
-          label,
-          input,
-          textarea {
-            color: var(--bodyTextColorWhite);
-            background-color: transparent;
-
-            &::placeholder {
-              /* lighten up the color of the text by 40%*/
-              filter: brightness(1.4);
-            }
-          }
-        }
-
-        .cs-bg-picture {
-          background-color: #000;
-
-          img {
-            /* lets parent background-color bleed through and darken it */
-            opacity: 0.5;
-          }
-        }
       }
     }
   }
