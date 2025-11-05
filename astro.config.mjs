@@ -15,4 +15,15 @@ export default defineConfig({
       priority: 0.7,
     }),
   ],
+  build: {
+    // This ensures Netlify can detect forms
+    format: "file",
+  },
+  // Add this for Netlify forms
+  vite: {
+    define: {
+      // Helps with form detection
+      __NETLIFY_FORM_DETECTION__: "true", 
+    },
+  }, 
 });
