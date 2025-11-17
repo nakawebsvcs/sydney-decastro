@@ -26,14 +26,17 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
             <p class="cs-text">
                 My name is Sydney deCastro. I'm a licensed massage therapist in Pennsylvania and I'm excited to share my passion for bodywork and healing through therapeutic touch.
             </p>
+             <div class="button-group">
             <a href="/contact" class="cs-button-solid">Contact</a>
+            <a href="https://mysite.vagaro.com/inspirewellnessstudio" target="_blank" class="cs-button-solid">Book Now</a>
+            </div>
             <div class="cs-info">
-                <img class="cs-info-pic" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/derma-sbs-1.png" alt="graphic" width="179" height="225" aria-hidden="true">
+                <img class="cs-info-pic" loading="lazy" decoding="async" src="/assets/images/inspire-wellness.png" alt="graphic" width="179" height="225" aria-hidden="true">
                 <div class="cs-wrapper">
                     <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/brown-pin-derm.svg" loading="lazy" decoding="async" alt="icon" width="33" height="38" aria-hidden="true">
                     <div class="cs-flex">
                         <span class="cs-address">Find Me Here</span>
-                        <span class="cs-slogan">4321 Birch St, Suite 140, Mifflinburg, PA 17837</span>
+                        <span class="cs-slogan"><a href="https://maps.app.goo.gl/v6Up4Dx9hiWtRMox7" target="_blank" style="font-size: inherit; color: inherit;">Inspire Wellness Studio</a><br>333 Chestnut St. #2<br>Mifflinburg, PA 17844</span>
                     </div>
                 </div>
             </div>
@@ -336,6 +339,12 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
                 }
             }
         }
+
+        .button-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
 
         .cs-info {
             width: 100%;

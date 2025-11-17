@@ -103,11 +103,11 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         > -->
         <!--Address-->
         <span class="cs-header">Location</span>
-        <a class="cs-link" href={client.address.mapLink}>
-          <!-- {client.address.lineOne},
+        <a class="cs-link" href={client.address.mapLink} target="_blank">
+          {client.address.lineOne}:
           <br />
-          {client.address.lineTwo},
-          <br /> -->
+          {client.address.lineTwo}
+          <br />
           <span class="cs-block">
             {client.address.city},
             {client.address.state}

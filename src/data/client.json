@@ -4,12 +4,12 @@
 	"phoneForTel": "570-217-1680",
 	"phoneFormatted": "(570) 217-1680",
 	"address": {
-		"lineOne": "First Address Line",
-		"lineTwo": "Second Address Line",
-		"city": "Lewiburg",
+		"lineOne": "Find me at Inspire Wellness Studio",
+		"lineTwo": "333 Chestnut St. #2",
+		"city": "Mifflinburg",
 		"state": "Pennsylvania",
-		"zip": "17837",
-		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
+		"zip": "17844",
+		"mapLink": "https://maps.app.goo.gl/v6Up4Dx9hiWtRMox7"
 	},
 	"domain": "http://sydneydecastrolmt.netlify.app"
 }
