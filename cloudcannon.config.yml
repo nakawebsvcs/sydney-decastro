@@ -1,0 +1,56 @@
+
+# CloudCannon configuration
+
+# The source directory for your site
+source: src
+
+# A list of collections to show in the CloudCannon sidebar
+collections_config:
+  blog:
+    # The path to your blog posts
+    path: content/blog
+    # The name of the collection in the sidebar
+    name: Blog Posts
+    # How to create new files
+    add_options:
+      - name: Add New Post
+        schema: default
+        # Default content for new posts
+        content:
+          title: New Post
+          author: Your Name
+          date: 'now'
+          image:
+            src: '/src/assets/images/blog/placeholder.jpg'
+            alt: 'Placeholder Image'
+  data:
+    # The path to your data files
+    path: data
+    # The name of the collection in the sidebar
+    name: Site Data
+    # Make this collection a single file in the sidebar
+    output: false
+
+# Let CloudCannon know about your data files
+_inputs:
+  # Define inputs for client.json
+  address.lineOne:
+    type: text
+    comment: 'First line of the address.'
+  address.lineTwo:
+    type: text
+    comment: 'Second line of the address (e.g., suite number).'
+  address.city:
+    type: text
+  address.state:
+    type: text
+  address.zip:
+    type: text
+  address.mapLink:
+    type: url
+    comment: 'URL to the location on Google Maps.'
+
+# Set the paths for static assets
+paths:
+  static: public
+  uploads: public/assets/images
