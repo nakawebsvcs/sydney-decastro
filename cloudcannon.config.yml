@@ -1,56 +1,67 @@
-
-# CloudCannon configuration
-
-# The source directory for your site
-source: src
-
-# A list of collections to show in the CloudCannon sidebar
-collections_config:
-  blog:
-    # The path to your blog posts
-    path: content/blog
-    # The name of the collection in the sidebar
-    name: Blog Posts
-    # How to create new files
-    add_options:
-      - name: Add New Post
-        schema: default
-        # Default content for new posts
-        content:
-          title: New Post
-          author: Your Name
-          date: 'now'
-          image:
-            src: '/src/assets/images/blog/placeholder.jpg'
-            alt: 'Placeholder Image'
-  data:
-    # The path to your data files
-    path: data
-    # The name of the collection in the sidebar
-    name: Site Data
-    # Make this collection a single file in the sidebar
-    output: false
-
-# Let CloudCannon know about your data files
-_inputs:
-  # Define inputs for client.json
-  address.lineOne:
-    type: text
-    comment: 'First line of the address.'
-  address.lineTwo:
-    type: text
-    comment: 'Second line of the address (e.g., suite number).'
-  address.city:
-    type: text
-  address.state:
-    type: text
-  address.zip:
-    type: text
-  address.mapLink:
-    type: url
-    comment: 'URL to the location on Google Maps.'
-
-# Set the paths for static assets
 paths:
   static: public
-  uploads: public/assets/images
+  uploads: public/uploads
+
+commit_templates:
+  - label: Default message
+    template_string: '[default_commit_message]'
+  - label: Custom message
+    template_string: '{message}'
+
+collections_config:
+  pages:
+    path: src/content/pages
+    url: "/[slug]/"
+    icon: wysiwyg
+    disable_add_folder: true
+    _enabled_editors:
+      - data
+      - visual
+    add_options:
+      - name: Add New Page
+        schema: default
+        icon: note_add
+    schemas:
+      default:
+        name: New Page
+        path: .cloudcannon/schemas/page.md
+    _inputs:
+      title:
+        type: text
+        options:
+          required: true
+          empty_type: string
+      hero:
+        type: object
+        comment: Hero section content
+      about:
+        type: object
+        comment: About section content
+      commitment:
+        type: object
+        comment: My Commitment section content
+      modalities:
+        type: object
+        comment: Massage Modalities section content
+
+collection_groups:
+  - heading: Pages
+    collections:
+      - pages
+
+_inputs:
+  image:
+    type: image
+    options:
+      max_file_size: 5000
+  title:
+    type: text
+    options:
+      required: true
+  description:
+    type: text
+  button:
+    type: object
+    options:
+      preview:
+        icon: smart_button

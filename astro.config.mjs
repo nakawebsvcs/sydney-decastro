@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
+import editableRegions from "@cloudcannon/editable-regions/astro-integration";
 
 export default defineConfig({
   devToolbar: {
@@ -8,6 +9,7 @@ export default defineConfig({
   },
   site: "https://sydneydecastrolmt.netlify.app",
   integrations: [
+    editableRegions(),
     icon(),
     sitemap({
       filter: (page) => !page.includes("/admin"),
