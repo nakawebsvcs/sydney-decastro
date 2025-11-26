@@ -6,6 +6,8 @@ hero:
   buttons:
     - text: 
       link: 
+    - text:
+      link:
   location:
     studio: 
     address: 
@@ -21,5 +23,6 @@ commitment:
 modalities:
   title: 
   content: 
-    - 
+    - name:
+      description:
 ---

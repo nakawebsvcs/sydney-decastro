@@ -54,8 +54,9 @@ if (page.slug === 'index') {
               <span class="cs-slogan">
                 <a href={page.data.hero.location.map_link} target="_blank" style="font-size: inherit; color: inherit;">
                   {page.data.hero.location.studio}
-                </a><br>
-                {page.data.hero.location.address}
+               </a><br>
+                {page.data.hero.location.address_line_1}<br>
+                {page.data.hero.location.address_line_2}
               </span>
             </div>
           </div>
@@ -123,9 +124,9 @@ if (page.slug === 'index') {
       </picture>
       <div class="cs-content">
         <h2 class="cs-title">{page.data.modalities.title}</h2>
-        {page.data.modalities.content.map((paragraph) => (
+        {page.data.modalities.content.map((modality) => (
           <p class="cs-text">
-            {paragraph}
+            <strong>{modality.name}:</strong> {modality.description}
           </p>
         ))}
       </div>

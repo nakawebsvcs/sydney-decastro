@@ -43,6 +43,22 @@ collections_config:
       modalities:
         type: object
         comment: Massage Modalities section content
+        options:
+          structures:
+            - values:
+                - key: title
+                  label: Title
+                - key: content
+                  label: Modalities
+                  type: array
+                  options:
+                    structures:
+                      - values:
+                          - key: name
+                            label: Name
+                          - key: description
+                            label: Description
+                            type: markdown
 
 collection_groups:
   - heading: Pages

@@ -1,6 +1,5 @@
 import { defineCollection, z } from "astro:content";
 
-// CORRECTED schema that matches your ACTUAL data structure
 const pagesCollection = defineCollection({
   type: "content",
   schema: z.object({
@@ -16,7 +15,8 @@ const pagesCollection = defineCollection({
       ),
       location: z.object({
         studio: z.string(),
-        address: z.string(),
+        address_line_1: z.string(),
+        address_line_2: z.string(),
         map_link: z.string(),
       }),
     }),
@@ -30,7 +30,7 @@ const pagesCollection = defineCollection({
     }),
     modalities: z.object({
       title: z.string(),
-      content: z.array(z.string()), // This is correct - array of strings
+      content: z.array(z.record(z.string())),
     }),
   }),
 });
