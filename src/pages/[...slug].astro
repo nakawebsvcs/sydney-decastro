@@ -38,9 +38,9 @@ if (page.slug === 'index') {
         <p class="cs-text" data-editable="text" data-prop="hero.description">
           {page.data.hero.description}
         </p>
-        <div class="button-group">
+        <div class="button-group" data-editable="array" data-prop="hero.buttons">
           {page.data.hero.buttons.map((button) => (
-            <a href={button.link} class="cs-button-solid">
+            <a href={button.link} class="cs-button-solid" data-editable="array-item" data-prop="text">
               {button.text}
             </a>
           ))}
