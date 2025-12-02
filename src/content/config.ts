@@ -22,15 +22,18 @@ const pagesCollection = defineCollection({
     }),
     about: z.object({
       title: z.string(),
-      content: z.array(z.string()), // This is correct - array of strings
+      content: z.array(z.string()), 
     }),
     commitment: z.object({
       title: z.string(),
-      content: z.array(z.string()), // This is correct - array of strings
+      content: z.array(z.string()), 
     }),
     modalities: z.object({
       title: z.string(),
-      content: z.array(z.record(z.string())),
+      content: z.array(z.object({
+      title: z.string(),
+      content: z.array(z.string()),
+    }),),
     }),
   }),
 });
