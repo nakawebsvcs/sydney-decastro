@@ -32,27 +32,7 @@ collections_config:
       modalities:
         type: object
         options:
-          structures:
-            - style: select
-              values:
-                - value: 
-                    title:
-                    content:
-                  _inputs:
-                    title:
-                      label: Title
-                    content:
-                      label: Modalities
-                      type: array
-                      options:
-                        structures:
-                          - style: select
-                            values:
-                              - key: name
-                                label: Name
-                              - key: description
-                                label: Description
-                                type: markdown
+          structures: _structures.modalities
         comment: Massage Modalities section content
         cascade: true
     add_options:
@@ -75,6 +55,29 @@ collection_groups:
   - heading: Pages
     collections:
       - pages
+_structures:
+  modalities:
+    values:
+      - value: 
+          title:
+          content:
+        _inputs:
+          title:
+            label: Title
+          content:
+            label: Modalities
+            type: array
+            options:
+              structures: _structures.content
+        _structures:
+          content:
+            values:
+              - value:
+                  name:
+                  description:
+                _inputs:
+                  description: 
+                    type: markdown
 _inputs:
   image:
     type: image
