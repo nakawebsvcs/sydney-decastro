@@ -1,83 +1,103 @@
 paths:
-  static: public
   uploads: public/uploads
-
-commit_templates:
-  - label: Default message
-    template_string: '[default_commit_message]'
-  - label: Custom message
-    template_string: '{message}'
-
+  static: public
 collections_config:
   pages:
     path: src/content/pages
-    url: "/[slug]/"
     icon: wysiwyg
-    disable_add_folder: true
+    url: /[slug]/
+    disable_url: false
     _enabled_editors:
-      - data
       - visual
-    add_options:
-      - name: Add New Page
-        schema: default
-        icon: note_add
-    schemas:
-      default:
-        name: New Page
-        path: .cloudcannon/schemas/page.md
+      - data
     _inputs:
       title:
         type: text
         options:
-          required: true
           empty_type: string
+          required: true
+        cascade: true
       hero:
         type: object
         comment: Hero section content
+        cascade: true
       about:
         type: object
         comment: About section content
+        cascade: true
       commitment:
         type: object
         comment: My Commitment section content
+        cascade: true
       modalities:
         type: object
-        comment: Massage Modalities section content
         options:
           structures:
-            - values:
-                - key: title
-                  label: Title
-                - key: content
-                  label: Modalities
-                  type: array
-                  options:
-                    structures:
-                      - values:
-                          - key: name
-                            label: Name
-                          - key: description
-                            label: Description
-                            type: markdown
-
+            - style: select
+              values:
+                - value: 
+                    title:
+                    content:
+                  _inputs:
+                    title:
+                      label: Title
+                    content:
+                      label: Modalities
+                      type: array
+                      options:
+                        structures:
+                          - style: select
+                            values:
+                              - key: name
+                                label: Name
+                              - key: description
+                                label: Description
+                                type: markdown
+        comment: Massage Modalities section content
+        cascade: true
+    add_options:
+      - name: Add New Page
+        icon: note_add
+        schema: default
+    disable_add: false
+    disable_add_folder: true
+    disable_file_actions: false
+    schemas:
+      default:
+        path: .cloudcannon/schemas/page.md
+        reorder_inputs: true
+        hide_extra_inputs: false
+        remove_empty_inputs: false
+        remove_extra_inputs: true
+        name: New Page
+        icon: notes
 collection_groups:
   - heading: Pages
     collections:
       - pages
-
 _inputs:
   image:
     type: image
     options:
       max_file_size: 5000
+    cascade: true
   title:
     type: text
     options:
       required: true
+    cascade: true
   description:
     type: text
+    cascade: true
   button:
     type: object
     options:
       preview:
         icon: smart_button
+    cascade: true
+commit_templates:
+  - label: Default message
+    template_string: '[default_commit_message]'
+  - label: Custom message
+    template_string: '{message}'
+timezone: Etc/UTC
