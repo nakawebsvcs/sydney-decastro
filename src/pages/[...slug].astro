@@ -33,9 +33,9 @@ if (page.slug === 'index') {
     <div class="cs-container">
       <div class="cs-content">
         <div class="cs-flex">
-          <h2 class="cs-title">{page.data.hero.title}</h2>
+          <h2 class="cs-title" data-editable="text" data-prop="hero.title">{page.data.hero.title}</h2>
         </div>
-        <p class="cs-text">
+        <p class="cs-text" data-editable="text" data-prop="hero.description">
           {page.data.hero.description}
         </p>
         <div class="button-group">
