@@ -15,8 +15,6 @@ const pagesCollection = defineCollection({
       ),
       location: z.object({
         studio: z.string(),
-        address_line_1: z.string(),
-        address_line_2: z.string(),
         map_link: z.string(),
       }),
     }),
@@ -31,9 +29,10 @@ const pagesCollection = defineCollection({
     modalities: z.object({
       title: z.string(),
       content: z.array(z.object({
-      title: z.string(),
-      content: z.array(z.string()),
-    }),),
+          name: z.string(),
+          description: z.string()
+        })
+      ),
     }),
   }),
 });
