@@ -2,18 +2,16 @@
 _schema: default
 title: Home
 hero:
-  title: Nice to meet you, friend!
+  title: Nice to meet you!
   description: >-
     My name is Sydney deCastro. I'm a licensed massage therapist in Pennsylvania
     and I'm excited to share my passion for bodywork and healing through
     therapeutic touch.
   buttons:
-    - text: Editing Text
+    - text: Contact
       link: /contact
-    - text: Editing
+    - text: Book Now
       link: https://mysite.vagaro.com/inspirewellnessstudio
-    - text: Another one
-      link: htt
   location:
     studio: Inspire Wellness Studio
     map_link: https://maps.app.goo.gl/v6Up4Dx9hiWtRMox7
