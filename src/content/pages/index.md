@@ -78,6 +78,4 @@ modalities:
         order to reduce muscle tension and increase range of motion. This
         modality involves deeper pressure and a lot more communication between
         client and therapist regarding pain tolerance and comfort level.
-    - name: Sports/Physical Therapy
-      description: Testing adding another modality to this page.
 ---
