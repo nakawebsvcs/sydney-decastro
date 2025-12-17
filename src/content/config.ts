@@ -3,6 +3,7 @@ import { defineCollection, z } from "astro:content";
 const pagesCollection = defineCollection({
   type: "content",
   schema: z.object({
+    _schema: z.string().optional(),
     title: z.string(),
     hero: z.object({
       title: z.string(),
@@ -20,17 +21,18 @@ const pagesCollection = defineCollection({
     }),
     about: z.object({
       title: z.string(),
-      content: z.array(z.string()), 
+      content: z.array(z.string()),
     }),
     commitment: z.object({
       title: z.string(),
-      content: z.array(z.string()), 
+      content: z.array(z.string()),
     }),
     modalities: z.object({
       title: z.string(),
-      content: z.array(z.object({
+      content: z.array(
+        z.object({
           name: z.string(),
-          description: z.string()
+          description: z.string(),
         })
       ),
     }),
