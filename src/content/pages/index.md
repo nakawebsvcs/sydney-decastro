@@ -65,7 +65,19 @@ modalities:
   title: Massage Modalities
   content:
     - name: Swedish
-      description: In this type of massage, we will focus on restoring a sense of calm and overall balance. Relaxation is found through application of long, gliding massage strokes in a rhythmic and flowing sequence. This is a popular choice if your goal is to unwind and de-stress.
+      description: >-
+        In this type of massage, we will focus on restoring a sense of calm and
+        overall balance. Relaxation is found through application of long,
+        gliding massage strokes in a rhythmic and flowing sequence. This is a
+        popular choice if your goal is to unwind and de-stress.
     - name: Deep tissue/Neuromuscular Therapy (NMT)
-      description: This style of massage takes more time, and generally targets just a few areas of discomfort in order to provide relief to specific muscles. Techniques such as trigger point therapy may be applied as needed in order to reduce muscle tension and increase range of motion. This modality involves deeper pressure and a lot more communication between client and therapist regarding pain tolerance and comfort level.
+      description: >-
+        This style of massage takes more time, and generally targets just a few
+        areas of discomfort in order to provide relief to specific muscles.
+        Techniques such as trigger point therapy may be applied as needed in
+        order to reduce muscle tension and increase range of motion. This
+        modality involves deeper pressure and a lot more communication between
+        client and therapist regarding pain tolerance and comfort level.
+    - name: Sports/Physical Therapy
+      description: Testing adding another modality to this page.
 ---
