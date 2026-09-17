@@ -15,15 +15,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
   preloadedImage = {optimizedImage}
 >
   <!-- ============================================ -->
-  <!--                    LANDING                   -->
-  <!-- ============================================ -->
-
-  <!-- <Landing 
-    title="Contact"
-    image={optimizedImage}
-  /> -->
-
-  <!-- ============================================ -->
   <!--                Contact Form                  -->
   <!-- ============================================ -->
 
@@ -96,11 +87,6 @@ const optimizedImage = await getImage({src: landingImage, format: 'avif'})
         <!--Email-->
         <span class="cs-header">Email</span>
         <a class="cs-link" href={`mailto:${client.email}`}>{client.email}</a>
-        <!--Phone-->
-        <!-- <span class="cs-header">Phone</span>
-        <a class="cs-link" href={`tel:${client.phoneForTel}`}
-          >{client.phoneFormatted}</a
-        > -->
         <!--Address-->
         <span class="cs-header">Location</span>
         <a class="cs-link" href={client.address.mapLink} target="_blank">
